@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "docker_collections",
+  "info": {
+    "singularName": "docker-collection",
+    "pluralName": "docker-collections",
+    "displayName": "Docker Collection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Text": {
+      "type": "string"
+    },
+    "Number": {
+      "type": "integer"
+    }
+  }
+}
