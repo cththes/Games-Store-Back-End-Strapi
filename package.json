@@ -7,14 +7,15 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "develop:docker:db": "docker-compose up -d strapiDB && yarn develop",
+    "develop:docker": "docker-compose up -d"
   },
   "devDependencies": {},
   "dependencies": {
     "@strapi/plugin-i18n": "4.3.2",
     "@strapi/plugin-users-permissions": "4.3.2",
     "@strapi/strapi": "4.3.2",
-    "better-sqlite3": "7.4.6",
     "pg": "^8.7.3"
   },
   "author": {
