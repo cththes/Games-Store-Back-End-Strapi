@@ -1,0 +1,34 @@
+FROM node:16
+
+RUN apt-get update && apt-get install libvips-dev -y
+
+WORKDIR /opt/
+COPY ./package.json ./yarn.lock ./
+
+ENV PATH /opt/node_modules/.bin:$PATH
+RUN yarn config set network-timeout 600000 -g && yarn install
+
+WORKDIR /opt/app
+COPY ./ .
+
+ARG APP_URL_ARG
+ARG DATABASE_URL_ARG
+ARG APP_KEYS_ARG
+ARG API_TOKEN_SALT_ARG
+ARG ADMIN_JWT_SECRET_ARG
+ARG JWT_SECRET_ARG
+
+ENV APP_URL=$APP_URL_ARG
+ENV DATABASE_URL=$DATABASE_URL_ARG
+ENV APP_KEYS=$APP_KEYS_ARG
+ENV API_TOKEN_SALT=$API_TOKEN_SALT_ARG
+ENV ADMIN_JWT_SECRET=$ADMIN_JWT_SECRET_ARG
+ENV JWT_SECRET=$JWT_SECRET_ARG
+
+ENV NODE_ENV=production
+
+RUN yarn build
+
+EXPOSE 1337
+
+CMD ["yarn", "start"]
