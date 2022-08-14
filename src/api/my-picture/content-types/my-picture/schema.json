@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "my_pictures",
+  "info": {
+    "singularName": "my-picture",
+    "pluralName": "my-pictures",
+    "displayName": "MyPictures"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Description": {
+      "type": "string"
+    },
+    "Content": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
