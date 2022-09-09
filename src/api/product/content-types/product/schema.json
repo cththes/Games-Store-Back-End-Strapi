@@ -37,6 +37,16 @@
     },
     "Date": {
       "type": "date"
+    },
+    "LargeImg": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }
